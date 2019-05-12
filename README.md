@@ -10,11 +10,11 @@ Fungsi ini berguna untuk melakukan pengecekkan terhadap kapan settingan cron har
 int run(cron_conf conf)
 {
     return  (t->tm_sec==0) &&                                              // Cron cuma jalan kalau detiknya nol
-            (conf.minute==42 || conf.minute==t->tm_min) &&                 // Cek menit
-            (conf.day_of_month==42 || conf.day_of_month==t->tm_mday) &&    // Cek hari dalam bulan
-            (conf.day_of_week==42 || conf.day_of_week==t->tm_wday) &&      // Cek hari dalam mingguan
-            (conf.hour==42 || conf.hour==t->tm_hour) &&                    // Cek jam
-            (conf.month==42 || conf.month==t->tm_mon);                     // Cek bulan
+            (conf.minute==99 || conf.minute==t->tm_min) &&                 // Cek menit
+            (conf.day_of_month==99 || conf.day_of_month==t->tm_mday) &&    // Cek hari dalam bulan
+            (conf.day_of_week==99 || conf.day_of_week==t->tm_wday) &&      // Cek hari dalam mingguan
+            (conf.hour==99 || conf.hour==t->tm_hour) &&                    // Cek jam
+            (conf.month==99 || conf.month==t->tm_mon);                     // Cek bulan
 }
 ```
 
@@ -45,7 +45,7 @@ void seperate(char path[1000], cron_conf *conf1)
         }
         else
         {
-            if(path[i]=='*') number=path[i];
+            if(path[i]=='*') number=99;
             else
             {
                 number*=10;
