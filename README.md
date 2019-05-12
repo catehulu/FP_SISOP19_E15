@@ -24,7 +24,7 @@ Format cron yang digunakan adalah :
   
 \* \* \* \* \* /path/ke/eksekusi /path/ke/target
 
-Jadi difungsi ini akan dipisahkan dari confignya lalu dimasukkan ke struct.
+Jadi difungsi ini akan dipisahkan dari confignya lalu dimasukkan ke struct. Pada fungsi yang berguna untuk memisahkan setiap konfigurasi dari cron, kami menggunakan dua kali perulangan. Perulangan pertama digunakan untuk menyimpan angka angka dalam configan cron sedangkan perulangan kedua digunakan untuk menyalin kedua string yang ada pada settingan cron.
 ```
 void seperate(char path[1000], cron_conf *conf1)
 {
